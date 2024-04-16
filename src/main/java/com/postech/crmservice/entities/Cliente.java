@@ -36,6 +36,34 @@ public class Cliente implements Serializable {
         return enderecos;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }

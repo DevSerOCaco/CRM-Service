@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ClienteServiceImpl implements ClienteService{
@@ -68,6 +69,8 @@ public class ClienteServiceImpl implements ClienteService{
     @Override
     public List<ClienteDto> getAll() {
         List<Cliente> clientes = clienteRepository.findAll();
-        return Collections.singletonList(clienteMapper.toDto((Cliente) clientes));
+        return clientes.stream()
+                .map(clienteMapper::toDto)
+                .collect(Collectors.toList());
     }
 }
