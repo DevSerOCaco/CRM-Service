@@ -3,6 +3,8 @@ package com.postech.crmservice.service;
 import com.postech.crmservice.entities.Cliente;
 import com.postech.crmservice.entities.DTOs.ClienteDto;
 import com.postech.crmservice.mappers.ClienteMapper;
+import com.postech.crmservice.mappers.ClienteMapperImpl;
+import com.postech.crmservice.mappers.EnderecoMapperImpl;
 import com.postech.crmservice.repositories.ClienteRepository;
 import com.postech.crmservice.services.ClienteService;
 import com.postech.crmservice.services.ClienteServiceImpl;
@@ -25,7 +27,7 @@ public class ClienteServiceTest {
     private ClienteRepository clienteRepository;
 
     @Mock
-    private ClienteMapper clienteMapper;
+    private ClienteMapperImpl clienteMapper;
 
     AutoCloseable openMocks;
 
@@ -46,7 +48,12 @@ public class ClienteServiceTest {
         @Test
         void deveRegistrarCliente() {
             var cliente = ClienteHelper.gerarRegistro();
-            var clienteDto = clienteMapper.toDto(cliente);
+            var clienteDto = ClienteHelper.gerarRegistroDto();
+
+            when(clienteMapper.toEntity(clienteDto))
+                    .thenReturn(cliente);
+            when(clienteMapper.toDto(cliente))
+                    .thenReturn(clienteDto);
 
             when(clienteRepository.save(cliente))
                     .thenAnswer(i -> i.getArgument(0));

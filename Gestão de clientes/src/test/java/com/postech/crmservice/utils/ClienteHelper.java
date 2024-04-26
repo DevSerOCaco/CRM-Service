@@ -1,6 +1,8 @@
 package com.postech.crmservice.utils;
 
 import com.postech.crmservice.entities.Cliente;
+import com.postech.crmservice.entities.DTOs.ClienteDto;
+import com.postech.crmservice.entities.DTOs.EnderecoDto;
 import com.postech.crmservice.entities.Endereco;
 
 import java.util.ArrayList;
@@ -34,4 +36,18 @@ public abstract class ClienteHelper {
 
         return cliente;
     }
+
+    public static ClienteDto gerarRegistroDto() {
+        EnderecoDto enderecoDto = new EnderecoDto(1L, "Rua da Silva", "911", "Silva", "Silva", "Silva", "SP", "00000-000");
+
+        List<EnderecoDto> enderecosDto = new ArrayList<EnderecoDto>();
+        enderecosDto.add(enderecoDto);
+
+        ClienteDto clienteDto = new ClienteDto(1L, "Cliente teste", "(11) 97777-7777", "teste@email.com", "111.111.111-11", null, true, enderecosDto);
+
+        return clienteDto;
+    }
+
+
+
 }
