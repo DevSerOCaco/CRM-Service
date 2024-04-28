@@ -9,3 +9,9 @@ XGestão de clientes/src/test/java/com/postech/crmservice/service/ClienteService
 SGestão de clientes/src/main/java/com/postech/crmservice/mappers/ClienteMapper.java,7\3\73958fc2d8816408b9eb632eb0d08aa26c07cdd2
 �
 WGestão de clientes/src/main/java/com/postech/crmservice/mappers/ClienteMapperImpl.java,b\e\be1bb343f3f62a5edbf95714ec1d69d25710e9cf
+S
+#Gestão de clientes/CRM-Service.iml,6\6\66ef4b9ef05ccfae7b5a89ebefc2de7ab11ebab8
+�
+\Gestão de clientes/src/main/java/com/postech/crmservice/repositories/ClienteRepository.java,8\6\86018fa650980c2a9ac6b55fbbf04c70f622d8c7
+�
+YGestão de clientes/src/main/java/com/postech/crmservice/services/ClienteServiceImpl.java,9\6\96ab88894586fc0bb6ae306f66923e1e45a258a7
