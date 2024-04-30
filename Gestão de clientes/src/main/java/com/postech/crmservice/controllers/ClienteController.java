@@ -4,6 +4,7 @@ import com.postech.crmservice.entities.DTOs.ClienteDto;
 import com.postech.crmservice.services.ClienteService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +27,7 @@ public class ClienteController {
     @Operation(summary = "Efetua a inclusão de um novo cliente", method = "POST")
     public ResponseEntity<ClienteDto> save(@RequestBody ClienteDto clienteDto) {
         clienteService.save(clienteDto);
-        return ResponseEntity.ok(clienteDto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(clienteDto);
     }
 
     @PutMapping("/{id}")

@@ -87,7 +87,13 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
-		<!--FIM JUnit5-->
+        <dependency>
+            <groupId>com.callibrity.logging</groupId>
+            <artifactId>log-tracker</artifactId>
+            <version>1.0.1</version>
+            <scope>test</scope>
+        </dependency>
+        <!--FIM JUnit5-->
 	</dependencies>
 
 	<build>
