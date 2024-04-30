@@ -45,3 +45,9 @@ E
 GestaoDeEnvio/pom.xml,d\1\d16d07808b01734cd873075beb3d92d1670ad717
 Å
 QGestaoProdutos/src/main/java/br/com/fiap/gestaoprodutos/config/SwaggerConfig.java,9\d\9d6e6980a46ca1410442da02d88b61cd05fc0813
+S
+#GestaoDeEnvio/GestaoDeEnvio/pom.xml,9\4\94b20f5305535de1cbdd00a7bdf357606822eeb4
+ü
+oGestaoDeEnvio/GestaoDeEnvio/src/main/java/com/postech/gestaodeenvio/GestaoDeEnvio/GestaoDeEnvioApplication.java,3\9\392dc4afb9d0a9ab5f42b086624758800696da87
+u
+EGestaoDeEnvio/GestaoDeEnvio/src/main/resources/application.properties,9\1\9193cd77b66d0345ebdef1febbf0eb20c95a8093
