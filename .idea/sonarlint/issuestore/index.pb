@@ -9,8 +9,6 @@ XGest√£o de clientes/src/test/java/com/postech/crmservice/service/ClienteService
 SGest√£o de clientes/src/main/java/com/postech/crmservice/mappers/ClienteMapper.java,7\3\73958fc2d8816408b9eb632eb0d08aa26c07cdd2
 á
 WGest√£o de clientes/src/main/java/com/postech/crmservice/mappers/ClienteMapperImpl.java,b\e\be1bb343f3f62a5edbf95714ec1d69d25710e9cf
-S
-#Gest√£o de clientes/CRM-Service.iml,6\6\66ef4b9ef05ccfae7b5a89ebefc2de7ab11ebab8
 å
 \Gest√£o de clientes/src/main/java/com/postech/crmservice/repositories/ClienteRepository.java,8\6\86018fa650980c2a9ac6b55fbbf04c70f622d8c7
 â
@@ -39,15 +37,17 @@ UGest√£o de clientes/src/main/java/com/postech/crmservice/services/ClienteServic
 VGestaoProdutos/src/main/java/br/com/fiap/gestaoprodutos/GestaoProdutosApplication.java,7\f\7f3d064fec52c732b5bdb398ef6e1f8a9ea62959
 F
 GestaoProdutos/pom.xml,8\1\813da2ff46c2e6c89fce047246878c1752c7669d
-É
-SGestaoDeEnvio/src/main/java/com/example/gestaodeenvio/GestaoDeEnvioApplication.java,2\c\2cadc3f47f017ae2a89438c48d12389e03036e23
 E
 GestaoDeEnvio/pom.xml,d\1\d16d07808b01734cd873075beb3d92d1670ad717
 Å
 QGestaoProdutos/src/main/java/br/com/fiap/gestaoprodutos/config/SwaggerConfig.java,9\d\9d6e6980a46ca1410442da02d88b61cd05fc0813
-S
-#GestaoDeEnvio/GestaoDeEnvio/pom.xml,9\4\94b20f5305535de1cbdd00a7bdf357606822eeb4
-ü
-oGestaoDeEnvio/GestaoDeEnvio/src/main/java/com/postech/gestaodeenvio/GestaoDeEnvio/GestaoDeEnvioApplication.java,3\9\392dc4afb9d0a9ab5f42b086624758800696da87
-u
-EGestaoDeEnvio/GestaoDeEnvio/src/main/resources/application.properties,9\1\9193cd77b66d0345ebdef1febbf0eb20c95a8093
+K
+Gest√£o de clientes/pom.xml,6\c\6c3ec66e7ddc68beaa8ae37c00bf2eed2a5c4418
+G
+Gestao de Envio/HELP.md,0\5\05632b666aca856d03a12b4de17966e22f96c437
+G
+Gestao de Envio/pom.xml,8\1\817ff37007df0c5f368c8932b23fbfa4784a2e59
+ä
+ZGestao de Envio/src/test/java/com/postech/gestaodeenvio/GestaoDeEnvioApplicationTests.java,b\f\bf9fcc743948ac528589520c0305899cf0803b0c
+Ö
+UGestao de Envio/src/main/java/com/postech/gestaodeenvio/GestaoDeEnvioApplication.java,d\5\d5e635a2b37f6d56c8bc62c9a648f80b0b5a6c42
