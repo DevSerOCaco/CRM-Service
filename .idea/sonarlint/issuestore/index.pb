@@ -37,8 +37,6 @@ UGest√£o de clientes/src/main/java/com/postech/crmservice/services/ClienteServic
 VGestaoProdutos/src/main/java/br/com/fiap/gestaoprodutos/GestaoProdutosApplication.java,7\f\7f3d064fec52c732b5bdb398ef6e1f8a9ea62959
 F
 GestaoProdutos/pom.xml,8\1\813da2ff46c2e6c89fce047246878c1752c7669d
-E
-GestaoDeEnvio/pom.xml,d\1\d16d07808b01734cd873075beb3d92d1670ad717
 Å
 QGestaoProdutos/src/main/java/br/com/fiap/gestaoprodutos/config/SwaggerConfig.java,9\d\9d6e6980a46ca1410442da02d88b61cd05fc0813
 K
@@ -51,3 +49,37 @@ G
 ZGestao de Envio/src/test/java/com/postech/gestaodeenvio/GestaoDeEnvioApplicationTests.java,b\f\bf9fcc743948ac528589520c0305899cf0803b0c
 Ö
 UGestao de Envio/src/main/java/com/postech/gestaodeenvio/GestaoDeEnvioApplication.java,d\5\d5e635a2b37f6d56c8bc62c9a648f80b0b5a6c42
+|
+LGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/Pedido.java,2\0\2042d841542ab46011b26c7bfbafcd63c9c3160d
+Ç
+RGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/StatusPedido.java,a\7\a7dc6a4d02450a86b2c2759794e37eeda561b678
+{
+KGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/Itens.java,d\6\d60a17b7958bd4518d8174fe37ee42b5df882d2d
+~
+NGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/Endereco.java,0\d\0dd032bab061e63ac3871d9fe7b96326b4bbffdf
+Ç
+RGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/Destinatario.java,7\b\7bf9d7f396b2b885a3f6608f87143a41672beea0
+{
+KGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/Envio.java,e\4\e4343a176660bf735302a9a2da42ebdc8ee6cd3c
+â
+YGestao de Envio/src/main/java/com/postech/gestaodeenvio/integracao/MelhorEnvioClient.java,1\b\1b5ffabade0338c89f3002f357fcfc1496c02b00
+}
+MGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/Cotacao.java,e\e\ee9cf2ce34c45c4e51aacfb7115c4d87a4cca955
+
+OGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/Embalagem.java,c\a\ca82b9dfc976883adf63ef055b5d94f9d2d5c6d8
+}
+MGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/Options.java,c\f\cf8133d71968ffe987359d70aa2aa25adc8ea235
+ë
+aGestao de Envio/src/main/java/com/postech/gestaodeenvio/service/integracao/MelhorEnvioClient.java,b\4\b475d7d764aeb54620fa34977f93786a6da67b5b
+x
+HGestao de Envio/src/main/java/com/postech/gestaodeenvio/Controllers.java,3\f\3f4896d394d2a4498685df33a72d55cbc095d021
+è
+_Gestao de Envio/src/main/java/com/postech/gestaodeenvio/controllers/CalculaFreteController.java,d\4\d414e51c4771417574ace505535c87fe759212ba
+z
+JGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/From.java,6\f\6faf9b6a0bb0965b38dd274c4b0c0a92e95c6499
+x
+HGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/To.java,f\7\f70dcb2a615748200f2d005352fba6f25f8a3211
+z
+JGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/Prod.java,5\a\5aa34d43e5223c33e4b8288bbcda344af2ebb401
+~
+NGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/Products.java,3\0\30e58e009796344867b9ebeb38a279b25c48ba2f
