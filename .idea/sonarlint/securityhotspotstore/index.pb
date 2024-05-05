@@ -61,25 +61,59 @@ NGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/Endereco.java
 RGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/Destinatario.java,7\b\7bf9d7f396b2b885a3f6608f87143a41672beea0
 {
 KGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/Envio.java,e\4\e4343a176660bf735302a9a2da42ebdc8ee6cd3c
-â
-YGestao de Envio/src/main/java/com/postech/gestaodeenvio/integracao/MelhorEnvioClient.java,1\b\1b5ffabade0338c89f3002f357fcfc1496c02b00
-}
-MGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/Cotacao.java,e\e\ee9cf2ce34c45c4e51aacfb7115c4d87a4cca955
-
-OGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/Embalagem.java,c\a\ca82b9dfc976883adf63ef055b5d94f9d2d5c6d8
-}
-MGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/Options.java,c\f\cf8133d71968ffe987359d70aa2aa25adc8ea235
 ë
 aGestao de Envio/src/main/java/com/postech/gestaodeenvio/service/integracao/MelhorEnvioClient.java,b\4\b475d7d764aeb54620fa34977f93786a6da67b5b
-x
-HGestao de Envio/src/main/java/com/postech/gestaodeenvio/Controllers.java,3\f\3f4896d394d2a4498685df33a72d55cbc095d021
 è
 _Gestao de Envio/src/main/java/com/postech/gestaodeenvio/controllers/CalculaFreteController.java,d\4\d414e51c4771417574ace505535c87fe759212ba
-z
-JGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/From.java,6\f\6faf9b6a0bb0965b38dd274c4b0c0a92e95c6499
-x
-HGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/To.java,f\7\f70dcb2a615748200f2d005352fba6f25f8a3211
-z
-JGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/Prod.java,5\a\5aa34d43e5223c33e4b8288bbcda344af2ebb401
+ä
+ZGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/calculafrete/Cotacao.java,f\b\fb072226eff137ab13ede72e5002762bec582c77
+á
+WGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/calculafrete/From.java,6\4\646c7f7ba32b260625fb3a9c0c4d2bbb7214fabd
+ã
+[Gestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/calculafrete/Products.java,2\f\2fd728af2dcaa1fb1986c0d76df37141b8a0fc07
+Ö
+UGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/calculafrete/To.java,b\6\b6b993b08d1b3a4f12ea599131601d73df4efca7
+ä
+ZGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/calculafrete/Options.java,c\c\cc2d46a8a7d39b0f9738cdb47293815f41ff4299
+ö
+jGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/inserirfrete/InserirFretesNoCarrinho.java,4\4\44b4bceda16501b2474a29da89a8732c092b3611
+†
+pGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/inserirfrete/InserirFretesNoCarrinho.java,f\0\f0ff0929395ef7cc89c7e4a962fcbc9412765ae9
+ê
+`Gestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/calculafrete/Options.java,a\9\a92d3e174c71db64f873d249cadfe44ad8f870a3
+ë
+aGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/calculafrete/Products.java,8\3\836c31ee1a1b8ec985a91fa9087a36f559747432
+ç
+]Gestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/calculafrete/From.java,0\1\0187a5c301c7a750619d7207d0df4e5fd22325e6
+ã
+[Gestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/calculafrete/To.java,a\0\a074ebf2514916b6090fcbdd24af77c2122a0ea1
+Ä
+PGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/From.java,8\c\8c5a0314eee4b2e7c4db95d1ccb0927e07e6c153
 ~
-NGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/Products.java,3\0\30e58e009796344867b9ebeb38a279b25c48ba2f
+NGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/To.java,0\f\0f7fb46d1280eba0b00a17d0d75fa189cf116b65
+É
+SGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/Options.java,c\8\c8629542207a7c34af2b3af5ef46ba006273a43d
+Ñ
+TGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/Products.java,5\1\510c9b8d19af2a071da7661342b9a3a89bcbb7ee
+ù
+mGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/inserirfrete/InserirFretesRequest.java,c\5\c527d3183a66692b18b7098452f0dde58f42a86d
+Ç
+RGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/Volume.java,8\2\820a37c3b9ff37e4b652a6555f6bf58616c684f1
+ê
+`Gestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/calculafrete/Cotacao.java,f\6\f6f9ae14c16f0c584cab781dcb09aa0bdecd6aad
+ã
+[Gestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/ProductsCotacao.java,3\5\35337ffa64570a69c21251e6897b8b2223ed583d
+ë
+aGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/ProductsInserirFretes.java,2\9\296a5bcf464a5362065246500c728fd5c902adc5
+û
+nGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/inserirfrete/ProductsInserirFretes.java,0\6\063d8cb817fa1a35f9a82a89bc8c0580ae89235f
+ò
+hGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/calculafrete/ProductsCotacao.java,1\b\1bf7c4f4c2a0509bf78860fbb886b3d3a6e29ba7
+ú
+lGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/inserirfrete/OptionsInserirFrete.java,a\d\add7fa496f2195f4e7ae33d71f2246e7ada3a054
+é
+^Gestao de Envio/src/main/java/com/postech/gestaodeenvio/controllers/MelhorEnvioController.java,3\c\3c726d50a633b3eb2d18677a20aa6387d0428a79
+ô
+iGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/inserirfrete/FromInserirFrete.java,b\0\b0e82db876db44351e8f82a81e88dca18548bf6a
+ó
+gGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/inserirfrete/ToInserirFrete.java,0\0\0059e6b6ace22b633a8ddb2779b3fc7b35406b18

@@ -1,8 +1,9 @@
 package com.postech.gestaodeenvio.service.integracao;
 
 import com.google.gson.Gson;
-import com.postech.gestaodeenvio.entities.Cotacao;
-import com.postech.gestaodeenvio.entities.To;
+import com.postech.gestaodeenvio.entities.bodys.To;
+import com.postech.gestaodeenvio.entities.bodys.calculafrete.*;
+import com.postech.gestaodeenvio.entities.bodys.inserirfrete.InserirFretesRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -24,21 +25,30 @@ public class MelhorEnvioClient {
             Gson gson = new Gson();
             String json = gson.toJson(new Cotacao(new To(toCep)));
 
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create("https://sandbox.melhorenvio.com.br/api/v2/me/shipment/calculate"))
-                    .header("Accept", "application/json")
-                    .header("Content-Type", "application/json")
-                    .header("Authorization", "Bearer " + token)
-                    .header("User-Agent", "pauloricardossfilho@gmail.com")
-                    .method("POST", HttpRequest.BodyPublishers.ofString(json))
-                    .build();
-            HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+            HttpResponse<String> response;
+            response = baseRequest("https://sandbox.melhorenvio.com.br/api/v2/me/shipment/calculate", json, "POST");
             return ResponseEntity.ok(response.body());
         }
 
 
-        public void rastrearPedido() {
+        public ResponseEntity<?> inserirFrete() throws IOException, InterruptedException {
+            Gson gson = new Gson();
+            String json = gson.toJson(new InserirFretesRequest());
+            HttpResponse<String> response;
+            response = baseRequest("https://sandbox.melhorenvio.com.br/api/v2/me/cart", json, "POST");
+            return ResponseEntity.ok(response.body());
+        }
 
+        public HttpResponse<String> baseRequest(String url, String json, String method) throws IOException, InterruptedException {
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(url))
+                    .header("Accept", "application/json")
+                    .header("Content-Type", "application/json")
+                    .header("Authorization", "Bearer " + token)
+                    .header("User-Agent", "pauloricardossfilho@gmail.com")
+                    .method(method, HttpRequest.BodyPublishers.ofString(json))
+                    .build();
+            return HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         }
 
 
