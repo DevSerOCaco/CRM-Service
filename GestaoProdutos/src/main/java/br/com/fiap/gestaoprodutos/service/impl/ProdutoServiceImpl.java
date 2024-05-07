@@ -8,6 +8,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+
 @Service
 public class ProdutoServiceImpl implements ProdutoService {
 
@@ -39,11 +41,11 @@ public class ProdutoServiceImpl implements ProdutoService {
     @Override
     public Produto updateProduto(Long id, Produto produtoNovo) {
         Produto produto = this.getProdutoPorId(id);
-        System.out.println(produtoNovo.getNome() + " / "+ produtoNovo.getDescricao()
-                +" / "+ produtoNovo.getPreco()  + " / "+ produtoNovo.getQuantidadeEstoque() );
 
         if (produtoNovo.getNome() == null || produtoNovo.getDescricao() == null
-                || produtoNovo.getPreco() == null || produtoNovo.getQuantidadeEstoque() == null)
+                || produtoNovo.getPreco() == null || produtoNovo.getQuantidadeEstoque() == null
+                || produtoNovo.getPreco().compareTo(BigDecimal.ZERO) <= 0
+                || produtoNovo.getQuantidadeEstoque() < 0)
             throw new IllegalArgumentException("Preencha corretamente os dados que devem ser atualizados");
 
         produto.setNome(produtoNovo.getNome());
@@ -52,6 +54,18 @@ public class ProdutoServiceImpl implements ProdutoService {
         produto.setQuantidadeEstoque(produtoNovo.getQuantidadeEstoque());
 
         return produtoRepository.save(produto);
+    }
+
+    @Override
+    public void removeEstoque(Long id, Integer quantidade) {
+        Produto produto = this.getProdutoPorId(id);
+
+        if (produto.getQuantidadeEstoque() < quantidade) {
+            throw new IllegalArgumentException("quantidade desejada é maior que o estoque");
+        }
+        produto.setQuantidadeEstoque(produto.getQuantidadeEstoque() - quantidade);
+
+        produtoRepository.save(produto);
     }
 
     @Override

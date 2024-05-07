@@ -10,6 +10,7 @@ public interface ProdutoService {
     Produto getProdutoPorId(Long id);
     Produto salvarProduto(Produto produto);
     Produto updateProduto(Long id, Produto produtoNovo);
+    void removeEstoque(Long id, Integer quantidade);
     void deleteProduto(Long id);
 
 }

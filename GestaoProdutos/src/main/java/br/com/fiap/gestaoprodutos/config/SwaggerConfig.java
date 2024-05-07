@@ -18,7 +18,7 @@ public class SwaggerConfig {
         devServer.setDescription("Server OnRender.com");
 
         Server prodServer = new Server();
-        prodServer.setUrl("https://localhost:8090");
+        prodServer.setUrl("https://localhost:8080");
         prodServer.setDescription("Server de produção");
 
         Contact contact = new Contact();

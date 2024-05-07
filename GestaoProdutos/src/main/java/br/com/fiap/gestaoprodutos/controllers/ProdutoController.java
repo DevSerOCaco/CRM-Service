@@ -46,6 +46,12 @@ public class ProdutoController {
         return ResponseEntity.ok(updatedproduto);
     }
 
+    @PutMapping("/removeEstoque/{id}/{quantidade}")
+    public ResponseEntity<Void> removeEstoque(@PathVariable Long id, @PathVariable Integer quantidade) {
+        produtoService.removeEstoque(id, quantidade);
+        return ResponseEntity.ok().build();
+    }
+
     @DeleteMapping("/deleteProduto/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         produtoService.deleteProduto(id);
