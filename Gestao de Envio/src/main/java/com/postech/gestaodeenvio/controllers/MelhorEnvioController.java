@@ -40,4 +40,19 @@ public class MelhorEnvioController {
     public ResponseEntity<?> exibirInfoItensCarrinho() throws IOException, InterruptedException {
         return melhorEnvioClient.exibirInfoItensCarrinho();
     }
+
+    @GetMapping("/imprimirEtiqueta")
+    public ResponseEntity<?> imprimirEtiqueta() throws IOException, InterruptedException {
+        return melhorEnvioClient.imprimirEtiqueta();
+    }
+
+    @GetMapping("/comprarFrete")
+    public ResponseEntity<?> comprarFrete() throws IOException, InterruptedException {
+        return melhorEnvioClient.comprarFrete();
+    }
+
+    @GetMapping("/rastreioEnvio")
+    public ResponseEntity<?> rastreioEnvio() throws IOException, InterruptedException {
+        return melhorEnvioClient.rastreioEnvio();
+    }
 }

@@ -61,11 +61,11 @@ public class MelhorEnvioClient {
                 .build();
         return HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
     }
-        public ResponseEntity<?> gerarEtiqueta() throws IOException, InterruptedException {
-            HttpResponse<String> response;
-            response = baseRequestSemJson("https://sandbox.melhorenvio.com.br/api/v2/me/cart","POST");
-            return ResponseEntity.ok(response.body());
-        }
+    public ResponseEntity<?> gerarEtiqueta() throws IOException, InterruptedException {
+        HttpResponse<String> response;
+        response = baseRequestSemJson("https://sandbox.melhorenvio.com.br/api/v2/me/shipment/generate","POST");
+        return ResponseEntity.ok(response.body());
+    }
 
     public ResponseEntity<?> listarItensCarrinho() throws IOException, InterruptedException {
         HttpResponse<String> response;
@@ -78,5 +78,21 @@ public class MelhorEnvioClient {
         return ResponseEntity.ok(response.body());
     }
 
+    public ResponseEntity<?> imprimirEtiqueta() throws IOException, InterruptedException {
+        HttpResponse<String> response;
+        response = baseRequestSemJson("https://sandbox.melhorenvio.com.br/api/v2/me/shipment/print","POST");
+        return ResponseEntity.ok(response.body());
+    }
 
+    public ResponseEntity<?> comprarFrete() throws IOException, InterruptedException {
+        HttpResponse<String> response;
+        response = baseRequestSemJson("https://sandbox.melhorenvio.com.br/api/v2/me/shipment/checkout","POST");
+        return ResponseEntity.ok(response.body());
+    }
+ 
+    public ResponseEntity<?> rastreioEnvio() throws IOException, InterruptedException {
+        HttpResponse<String> response;
+        response = baseRequestSemJson("https://sandbox.melhorenvio.com.br/api/v2/me/shipment/tracking","POST");
+        return ResponseEntity.ok(response.body());
+    }
 }
