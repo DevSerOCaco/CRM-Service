@@ -51,6 +51,19 @@ public class MelhorEnvioClient {
             return HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         }
 
+    public ResponseEntity<?> gerarEtiqueta() throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://sandbox.melhorenvio.com.br/api/v2/me/shipment/generate"))
+                .header("Accept", "application/json")
+                .header("Content-Type", "application/json")
+                .header("Authorization", "Bearer " + token)
+                .header("User-Agent", "pauloricardossfilho@gmail.com")
+                .method("POST", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        return ResponseEntity.ok(response.body());
+    }
+
 
 
 }

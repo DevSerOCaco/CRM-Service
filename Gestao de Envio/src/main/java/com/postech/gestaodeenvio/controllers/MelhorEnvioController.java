@@ -25,4 +25,9 @@ public class MelhorEnvioController {
     public ResponseEntity<?> inserirFrete() throws IOException, InterruptedException {
         return melhorEnvioClient.inserirFrete();
     }
+
+    @GetMapping("/gerarEtiqueta")
+    public ResponseEntity<?> gerarEtiqueta() throws IOException, InterruptedException {
+        return melhorEnvioClient.gerarEtiqueta();
+    }
 }
