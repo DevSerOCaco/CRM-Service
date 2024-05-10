@@ -4,25 +4,32 @@ import br.com.fiap.gestaoprodutos.entities.Produto;
 import br.com.fiap.gestaoprodutos.service.ProdutoService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/produtos")
 @Tag(name = "Gestão de Produtos", description = "Controller para manutenção na Gestão de Produtos")
 public class ProdutoController {
 
-    @Autowired
-    private ProdutoService produtoService;
+    private final ProdutoService produtoService;
 
-    @GetMapping("/listarProdutos")
+    @GetMapping(value = "/listarProdutos", produces = MediaType.APPLICATION_JSON_VALUE)
     @Operation(summary = "Lista todos os Produtos", method = "GET")
     public ResponseEntity<Page<Produto>> findAll(@PageableDefault(size = 10, page = 0, sort = "nome") Pageable pageable) {
+//    public ResponseEntity<Page<Produto>> findAll(@RequestParam(defaultValue = "0") int page,
+//                                                 @RequestParam(defaultValue = "10") int size) {
+//        Pageable paginacao = PageRequest.of(page, size);
+//        Page<Produto> produtos = produtoService.listaProdutos(paginacao);
         Page<Produto> produtos = produtoService.listaProdutos(pageable);
         return ResponseEntity.ok(produtos);
     }

@@ -11,6 +11,6 @@ public interface ProdutoService {
     Produto salvarProduto(Produto produto);
     Produto updateProduto(Long id, Produto produtoNovo);
     void removeEstoque(Long id, Integer quantidade);
-    void deleteProduto(Long id);
+    boolean deleteProduto(Long id);
 
 }

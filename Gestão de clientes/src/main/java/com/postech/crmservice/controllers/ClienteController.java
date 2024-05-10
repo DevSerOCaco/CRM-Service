@@ -37,15 +37,15 @@ public class ClienteController {
         return ResponseEntity.ok(clienteDto);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     @Operation(summary = "Efetua a exclusão de um cliente existente", method = "DELETE")
-    public ResponseEntity<Void> delete(@RequestBody ClienteDto clienteDto) {
-        clienteService.delete(clienteDto.id());
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<?> delete(@PathVariable String id) {
+        clienteService.delete(Long.valueOf(id));
+        return new ResponseEntity<>("", HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    @Operation(summary = "Obbtem dados de um cliente existente", method = "GET")
+    @Operation(summary = "Obtem dados de um cliente existente", method = "GET")
     public ResponseEntity<ClienteDto> getById(@PathVariable Long id) {
         ClienteDto clienteDto = clienteService.getById(id);
         return ResponseEntity.ok(clienteDto);

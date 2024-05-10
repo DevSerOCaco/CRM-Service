@@ -51,6 +51,32 @@ public class MelhorEnvioClient {
             return HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         }
 
+    public HttpResponse<String> baseRequestSemJson(String url, String method) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(url))
+                .header("Accept", "application/json")
+                .header("Content-Type", "application/json")
+                .header("Authorization", "Bearer " + token)
+                .header("User-Agent", "pauloricardossfilho@gmail.com")
+                .build();
+        return HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+    }
+        public ResponseEntity<?> gerarEtiqueta() throws IOException, InterruptedException {
+            HttpResponse<String> response;
+            response = baseRequestSemJson("https://sandbox.melhorenvio.com.br/api/v2/me/cart","POST");
+            return ResponseEntity.ok(response.body());
+        }
+
+    public ResponseEntity<?> listarItensCarrinho() throws IOException, InterruptedException {
+        HttpResponse<String> response;
+        response = baseRequestSemJson("https://sandbox.melhorenvio.com.br/api/v2/me/cart","GET");
+        return ResponseEntity.ok(response.body());
+    }
+    public ResponseEntity<?> exibirInfoItensCarrinho() throws IOException, InterruptedException {
+        HttpResponse<String> response;
+        response = baseRequestSemJson("https://sandbox.melhorenvio.com.br/api/v2/me/cart/orderID","GET");
+        return ResponseEntity.ok(response.body());
+    }
 
 
 }

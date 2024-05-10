@@ -3,6 +3,7 @@ package br.com.fiap.gestaoprodutos.service.impl;
 import br.com.fiap.gestaoprodutos.entities.Produto;
 import br.com.fiap.gestaoprodutos.reporitories.ProdutoRepository;
 import br.com.fiap.gestaoprodutos.service.ProdutoService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -11,10 +12,10 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 
 @Service
+@RequiredArgsConstructor
 public class ProdutoServiceImpl implements ProdutoService {
 
-    @Autowired
-    private ProdutoRepository produtoRepository;
+    private final ProdutoRepository produtoRepository;
 
     @Override
     public Page<Produto> listaProdutos(Pageable pageable) {
@@ -69,11 +70,11 @@ public class ProdutoServiceImpl implements ProdutoService {
     }
 
     @Override
-    public void deleteProduto(Long id) {
+    public boolean deleteProduto(Long id) {
         Produto produto = this.getProdutoPorId(id);
 
         produtoRepository.delete(produto);
-
+        return true;
     }
 
 }
