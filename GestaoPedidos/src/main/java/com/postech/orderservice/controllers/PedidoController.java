@@ -1,41 +1,42 @@
 package com.postech.orderservice.controllers;
 
 import com.postech.orderservice.entities.Pedido;
-import com.postech.orderservice.entities.PedidoRequest;
-import com.postech.orderservice.entities.PedidoResponse;
 import com.postech.orderservice.service.PedidoService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/pedidos")
+@Tag(name = "Gestão de Pedidos", description = "Controller para manutenção na Gestão de Pedidos")
 public class PedidoController {
 
-    private final PedidoService pedidoService;
-
     @Autowired
-    public PedidoController(PedidoService pedidoService) {
-        this.pedidoService = pedidoService;
-    }
+    private PedidoService pedidoService;
 
-    @GetMapping
-    public List<Pedido> listarPedidos() {
-        return pedidoService.listarPedidos();
+    @GetMapping(value = "/listarPedidos", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "Lista todos os Pedidos", method = "GET")
+    public ResponseEntity<List<Pedido>> listarPedidos() {
+        return new ResponseEntity<>(pedidoService.listarPedidos(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
+    @Operation(summary = "Busca um pedido pelo Id", method = "GET")
     public Pedido buscarPedidoPorId(@PathVariable Long id) {
         return pedidoService.buscarPedidoPorId(id);
     }
 
     @PostMapping
-    public ResponseEntity<PedidoResponse> criarPedido(@RequestBody PedidoRequest pedidoRequest,
-                                                      @RequestParam Long clienteId) {
-        PedidoResponse pedidoResponse = pedidoService.criarPedido(clienteId, pedidoRequest);
+    public ResponseEntity<Pedido> criarPedido(@RequestBody Pedido pedido) {
+        Pedido pedidoResponse = pedidoService.criarPedido(pedido);
         return new ResponseEntity<>(pedidoResponse, HttpStatus.CREATED);
     }
 
@@ -48,4 +49,5 @@ public class PedidoController {
     public void deletarPedido(@PathVariable Long id) {
         pedidoService.deletarPedido(id);
     }
+
 }
