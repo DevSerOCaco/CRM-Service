@@ -63,48 +63,18 @@ RGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/Destinatario.j
 KGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/Envio.java,e\4\e4343a176660bf735302a9a2da42ebdc8ee6cd3c
 ë
 aGestao de Envio/src/main/java/com/postech/gestaodeenvio/service/integracao/MelhorEnvioClient.java,b\4\b475d7d764aeb54620fa34977f93786a6da67b5b
-è
-_Gestao de Envio/src/main/java/com/postech/gestaodeenvio/controllers/CalculaFreteController.java,d\4\d414e51c4771417574ace505535c87fe759212ba
-ä
-ZGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/calculafrete/Cotacao.java,f\b\fb072226eff137ab13ede72e5002762bec582c77
-á
-WGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/calculafrete/From.java,6\4\646c7f7ba32b260625fb3a9c0c4d2bbb7214fabd
-ã
-[Gestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/calculafrete/Products.java,2\f\2fd728af2dcaa1fb1986c0d76df37141b8a0fc07
-Ö
-UGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/calculafrete/To.java,b\6\b6b993b08d1b3a4f12ea599131601d73df4efca7
-ä
-ZGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/calculafrete/Options.java,c\c\cc2d46a8a7d39b0f9738cdb47293815f41ff4299
-ö
-jGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/inserirfrete/InserirFretesNoCarrinho.java,4\4\44b4bceda16501b2474a29da89a8732c092b3611
-†
-pGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/inserirfrete/InserirFretesNoCarrinho.java,f\0\f0ff0929395ef7cc89c7e4a962fcbc9412765ae9
-ê
-`Gestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/calculafrete/Options.java,a\9\a92d3e174c71db64f873d249cadfe44ad8f870a3
-ë
-aGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/calculafrete/Products.java,8\3\836c31ee1a1b8ec985a91fa9087a36f559747432
-ç
-]Gestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/calculafrete/From.java,0\1\0187a5c301c7a750619d7207d0df4e5fd22325e6
-ã
-[Gestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/calculafrete/To.java,a\0\a074ebf2514916b6090fcbdd24af77c2122a0ea1
 Ä
 PGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/From.java,8\c\8c5a0314eee4b2e7c4db95d1ccb0927e07e6c153
 ~
 NGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/To.java,0\f\0f7fb46d1280eba0b00a17d0d75fa189cf116b65
 É
 SGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/Options.java,c\8\c8629542207a7c34af2b3af5ef46ba006273a43d
-Ñ
-TGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/Products.java,5\1\510c9b8d19af2a071da7661342b9a3a89bcbb7ee
 ù
 mGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/inserirfrete/InserirFretesRequest.java,c\5\c527d3183a66692b18b7098452f0dde58f42a86d
 Ç
 RGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/Volume.java,8\2\820a37c3b9ff37e4b652a6555f6bf58616c684f1
 ê
 `Gestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/calculafrete/Cotacao.java,f\6\f6f9ae14c16f0c584cab781dcb09aa0bdecd6aad
-ã
-[Gestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/ProductsCotacao.java,3\5\35337ffa64570a69c21251e6897b8b2223ed583d
-ë
-aGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/ProductsInserirFretes.java,2\9\296a5bcf464a5362065246500c728fd5c902adc5
 û
 nGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/inserirfrete/ProductsInserirFretes.java,0\6\063d8cb817fa1a35f9a82a89bc8c0580ae89235f
 ò
@@ -117,3 +87,5 @@ lGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/inserirf
 iGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/inserirfrete/FromInserirFrete.java,b\0\b0e82db876db44351e8f82a81e88dca18548bf6a
 ó
 gGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/inserirfrete/ToInserirFrete.java,0\0\0059e6b6ace22b633a8ddb2779b3fc7b35406b18
+Ü
+VGestaoPedidos/src/main/java/com/postech/orderservice/controllers/PedidoController.java,3\9\3973e0cfcb63ec9877d3d90ce2d2b9a87be4e08c

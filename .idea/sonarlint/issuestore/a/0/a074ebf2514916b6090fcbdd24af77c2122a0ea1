@@ -1,5 +1,0 @@
-
-“	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïºøĞ8şŸ‘ô1J$9628fda5-2ab1-487f-b0a6-079a966d8618
-˜	java:S116"VRename this field "postal_code" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛòÛ—8ÿš‘ô1J$3f7679e5-975e-45d1-8ea3-7fc10c9afbc1
-r
-java:S1068"/Remove this unused "postal_code" private field.(ÛòÛ—8‚š‘ô1J$9d06cb8a-6d51-465c-8e99-a84af77406e1
