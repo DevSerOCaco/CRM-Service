@@ -35,17 +35,20 @@ public class PedidoController {
     }
 
     @PostMapping
+    @Operation(summary = "Criar um novo pedido", method = "POST")
     public ResponseEntity<Pedido> criarPedido(@RequestBody Pedido pedido) {
         Pedido pedidoResponse = pedidoService.criarPedido(pedido);
         return new ResponseEntity<>(pedidoResponse, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
+    @Operation(summary = "Atualizar um pedido cadastrado", method = "PUT")
     public Pedido atualizarPedido(@PathVariable Long id, @RequestBody Pedido pedido) {
         return pedidoService.atualizarPedido(id, pedido);
     }
 
     @DeleteMapping("/{id}")
+    @Operation(summary = "Deleta um pedido cadastrado", method = "DELETE")
     public void deletarPedido(@PathVariable Long id) {
         pedidoService.deletarPedido(id);
     }

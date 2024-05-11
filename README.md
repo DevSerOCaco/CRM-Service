@@ -11,6 +11,8 @@ Gestão de produtos - https://app-gestaoprodutos.azurewebsites.net
 
 Gestão de envios - https://app-gestaoenvios.azurewebsites.net
 
+Gestão de pedidos - https://app-gestaopedidos.azurewebsites.net
+
 
 
 ## 🔧 Instalação
@@ -29,4 +31,5 @@ git clone https://github.com/DevSerOCaco/Tech-Challenge-Fase4
 - Gestão de clientes - https://app-gestapclientes.azurewebsites.net/documentacao
 - Gestão de produtos - https://app-gestaoprodutos.azurewebsites.net/documentacao
 - Gestão de envios - https://app-gestaoenvios.azurewebsites.net/documentacao
+- Gestão de pedidos - https://app-gestaopedidos.azurewebsites.net/documentacao
 
