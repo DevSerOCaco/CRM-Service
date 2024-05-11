@@ -1,17 +1,25 @@
 package com.postech.orderservice.entities;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Entity
+@Table(name = "tb_cliente")
 @Data
-@AllArgsConstructor
+@Builder(toBuilder = true)
 @NoArgsConstructor
+@AllArgsConstructor
 public class Cliente {
 
-    private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idCliente;
     private String nome;
     private String telefone;
     private String email;
-    private Endereco endereco;
+    private String endereco;
+
 }

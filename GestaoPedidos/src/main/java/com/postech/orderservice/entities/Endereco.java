@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+//depois verifcar se voltar a utilizar
 public class Endereco {
 
     private String logradouro;
