@@ -14,12 +14,12 @@ public class SwaggerConfig {
     @Bean
     public OpenAPI myOpenAPI() {
         Server devServer = new Server();
-        devServer.setUrl("https://fiap-crm.onrender.com");
-        devServer.setDescription("Server OnRender.com");
+        devServer.setUrl("https://app-gestaoclientes.azurewebsites.net");
+        devServer.setDescription("Server Production");
 
         Server prodServer = new Server();
         prodServer.setUrl("https://localhost:8090");
-        prodServer.setDescription("Server de produção");
+        prodServer.setDescription("Server Development");
 
         Contact contact = new Contact();
         contact.setEmail("contato@gmail.com");
