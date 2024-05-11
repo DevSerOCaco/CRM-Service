@@ -22,7 +22,6 @@ git clone https://github.com/DevSerOCaco/Tech-Challenge-Fase4
 
 - mvn clean<br>
   remover o diretório antes de executar o clean _target_
-<br>
 - mvn compile<br>
   compila o projeto, gera o resultado no diretório _target_
 
