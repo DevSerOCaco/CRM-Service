@@ -1,4 +1,4 @@
-package com.postech.gestaodeenvio.service.integracao;
+package com.postech.gestaodeenvio.services.integracao;
 
 import com.google.gson.Gson;
 import com.postech.gestaodeenvio.entities.bodys.To;

@@ -89,3 +89,25 @@ iGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/inserirf
 gGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/inserirfrete/ToInserirFrete.java,0\0\0059e6b6ace22b633a8ddb2779b3fc7b35406b18
 Ü
 VGestaoPedidos/src/main/java/com/postech/orderservice/controllers/PedidoController.java,3\9\3973e0cfcb63ec9877d3d90ce2d2b9a87be4e08c
+E
+GestaoPedidos/pom.xml,a\c\ac1ef3f81c9cb52be04712078bbe4369f678f89d
+y
+IGestaoPedidos/src/main/java/com/postech/orderservice/entities/Pedido.java,c\c\cc7f934a71b8ec3e0c0f33c440237d9fb8605ba0
+à
+XGestaoPedidos/src/main/java/com/postech/orderservice/service/impl/PedidoServiceImpl.java,5\2\5272fe72f6ccdd405acf49b1c25541139aed4536
+z
+JGestaoPedidos/src/main/java/com/postech/orderservice/entities/Produto.java,b\4\b44174cf76b655f983436b7a5effb422b8a747e1
+z
+JGestaoProdutos/Gestao de Produtos - tech challenge.postman_collection.json,5\7\5728131b20ff18d78e60a4035cf2934ba993fb4b
+ç
+]Gestao de Envio/src/main/java/com/postech/gestaodeenvio/service/integracao/EnvioConsumer.java,f\3\f37645d65cc53870f2cbd94eb80f85d4aaa951c9
+Å
+QGestao de Envio/src/main/java/com/postech/gestaodeenvio/service/EnvioService.java,e\c\ec2bec545d8022fad91167ad0d9c20bacd215088
+é
+^Gestao de Envio/src/main/java/com/postech/gestaodeenvio/services/integracao/EnvioConsumer.java,a\d\adc49b2112a336fbebc3654d9bdbfa7b4a5eae9e
+Ç
+RGestao de Envio/src/main/java/com/postech/gestaodeenvio/services/EnvioService.java,8\9\895945958a39832965c64b5b3f9fa0e9b1b00070
+ç
+]Gestao de Envio/src/main/java/com/postech/gestaodeenvio/services/integracao/EnvioRequest.java,6\e\6e08f5e7a81a29df6355858d69f5033aa814efc4
+í
+bGestao de Envio/src/main/java/com/postech/gestaodeenvio/services/integracao/MelhorEnvioClient.java,d\a\dab1c51b0c5d0fde6c6091b5db9b9b9f9666f956

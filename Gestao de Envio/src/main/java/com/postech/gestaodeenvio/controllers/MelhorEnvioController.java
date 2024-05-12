@@ -1,6 +1,6 @@
 package com.postech.gestaodeenvio.controllers;
 
-import com.postech.gestaodeenvio.service.integracao.MelhorEnvioClient;
+import com.postech.gestaodeenvio.services.integracao.MelhorEnvioClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
