@@ -10,7 +10,7 @@ public interface PedidoService {
 
     Pedido buscarPedidoPorId(Long id);
 
-    Pedido criarPedido(Pedido pedido);
+    Pedido criarPedido(Pedido pedido, Long idCliente);
 
     Pedido atualizarPedido(Long id, Pedido pedidoNovo);
 

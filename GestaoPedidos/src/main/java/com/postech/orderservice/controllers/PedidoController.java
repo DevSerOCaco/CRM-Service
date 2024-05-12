@@ -30,21 +30,23 @@ public class PedidoController {
 
     @GetMapping("/{id}")
     @Operation(summary = "Busca um pedido pelo Id", method = "GET")
-    public Pedido buscarPedidoPorId(@PathVariable Long id) {
-        return pedidoService.buscarPedidoPorId(id);
+    public ResponseEntity<Pedido> buscarPedidoPorId(@PathVariable Long id) {
+        Pedido pedido = pedidoService.buscarPedidoPorId(id);
+        return ResponseEntity.ok(pedido);
     }
 
     @PostMapping
     @Operation(summary = "Criar um novo pedido", method = "POST")
-    public ResponseEntity<Pedido> criarPedido(@RequestBody Pedido pedido) {
-        Pedido pedidoResponse = pedidoService.criarPedido(pedido);
+    public ResponseEntity<Pedido> criarPedido(@RequestBody Pedido pedido, @RequestParam Long idCliente) {
+        Pedido pedidoResponse = pedidoService.criarPedido(pedido, idCliente);
         return new ResponseEntity<>(pedidoResponse, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
     @Operation(summary = "Atualizar um pedido cadastrado", method = "PUT")
-    public Pedido atualizarPedido(@PathVariable Long id, @RequestBody Pedido pedido) {
-        return pedidoService.atualizarPedido(id, pedido);
+    public ResponseEntity<Pedido> atualizarPedido(@PathVariable Long id, @RequestBody Pedido pedidoNovo) {
+        Pedido pedidoNovoResponse = pedidoService.atualizarPedido(id, pedidoNovo);
+        return new ResponseEntity<>(pedidoNovoResponse, HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
