@@ -8,8 +8,8 @@ import com.postech.orderservice.service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class PedidoServiceImpl implements PedidoService {
@@ -36,51 +36,54 @@ public class PedidoServiceImpl implements PedidoService {
     }
 
     @Override
-    public PedidoResponse criarPedido(Long clienteId, PedidoRequest pedidoRequest) {
-        // Buscar o cliente no banco de dados
-        Cliente cliente = clienteRepository.findById(clienteId)
-                .orElseThrow(() -> new IllegalArgumentException("Cliente não encontrado com ID: " + clienteId));
-
-        // Verificar se os produtos existem no banco de dados e criar uma lista de produtos correspondentes
-        List<Produto> produtos = pedidoRequest.getItens().stream()
-                .map(produtoRequest -> {
-                    Produto produto = produtoRepository.findById(produtoRequest.getProdutoId())
-                            .orElseThrow(() -> new IllegalArgumentException("Produto não encontrado com ID: " + produtoRequest.getProdutoId()));
-                    produto.setQuantidade(produtoRequest.getQuantidade()); // Definir a quantidade do produto
-                    return produto;
-                })
-                .collect(Collectors.toList());
-
-        // Calcular o total do pedido
-        double totalPedido = produtos.stream()
-                .mapToDouble(produto -> produto.getPrecoUnitario() * produto.getQuantidade())
-                .sum();
-
-        // Criar o pedido
-        Pedido pedido = new Pedido();
+    public Pedido criarPedido(Pedido pedido, Long idCliente) {
+        Cliente cliente = getClienteById(idCliente);
         pedido.setCliente(cliente);
-        pedido.setItens(produtos);
+
+        BigDecimal totalPedido = calcularTotalPedido(pedido.getItens());
         pedido.setTotalPedido(totalPedido);
 
-        // Salvar o pedido no banco de dados
-        pedidoRepository.save(pedido);
-
-        // Construir e retornar o PedidoResponse
-        return new PedidoResponse(cliente, produtos, String.format("R$ %.2f", totalPedido));
-    }
-
-    @Override
-    public Pedido atualizarPedido(Long id, Pedido pedido) {
-        if (!pedidoRepository.existsById(id)) {
-            return null;
-        }
-        pedido.setId(id);
         return pedidoRepository.save(pedido);
     }
 
     @Override
+    public Pedido atualizarPedido(Long id, Pedido pedidoNovo) {
+        Pedido pedidoExistente = buscarPedidoPorId(id);
+
+        pedidoExistente.setCliente(pedidoNovo.getCliente());
+        pedidoExistente.setItens(pedidoNovo.getItens());
+        pedidoExistente.setTotalPedido(calcularTotalPedido(pedidoNovo.getItens()));
+
+        return pedidoRepository.save(pedidoExistente);
+    }
+
+    @Override
     public void deletarPedido(Long id) {
-        pedidoRepository.deleteById(id);
+        if (pedidoRepository.existsById(id)) {
+            pedidoRepository.deleteById(id);
+        } else {
+            throw new IllegalArgumentException("Pedido não encontrado com ID: " + id);
+        }
+    }
+
+    private Cliente getClienteById(Long idCliente) {
+        return clienteRepository.findById(idCliente)
+                .orElseThrow(() -> new IllegalArgumentException("Cliente não encontrado com ID: " + idCliente));
+    }
+
+    private BigDecimal calcularTotalPedido(List<ItemPedido> itensPedido) {
+        BigDecimal total = BigDecimal.ZERO;
+        for (ItemPedido itemPedido : itensPedido) {
+            Produto produto = getProdutoById(itemPedido.getIdProduto());
+            BigDecimal subtotal = produto.getPreco().multiply(BigDecimal.valueOf(itemPedido.getQuantidade()));
+            total = total.add(subtotal);
+        }
+        return total;
+    }
+
+    private Produto getProdutoById(Long idProduto) {
+        return produtoRepository.findById(idProduto)
+                .orElseThrow(() -> new IllegalArgumentException("Produto não encontrado com ID: " + idProduto));
     }
 
 }

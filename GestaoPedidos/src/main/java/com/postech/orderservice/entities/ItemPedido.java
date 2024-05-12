@@ -1,27 +1,24 @@
 package com.postech.orderservice.entities;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-
 @Entity
+@Table(name = "Item_Pedido")
 @Data
-@Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class Produto {
+@NoArgsConstructor
+@Builder
+public class ItemPedido {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
-    private BigDecimal preco;
+    private Long idProduto;
+    private Integer quantidade;
 
 }

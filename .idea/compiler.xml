@@ -3,6 +3,15 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Gestao-de-Envio" />
+        <module name="GestaoProdutos" />
+        <module name="GestaoPedidos" />
+        <module name="GestaoDeEnvio" />
+      </profile>
       <profile name="Annotation profile for CRM-Service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -13,14 +22,6 @@
         </processorPath>
         <module name="CRM-Service" />
       </profile>
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="Gestao-de-Envio" />
-        <module name="GestaoProdutos" />
-        <module name="GestaoDeEnvio" />
-      </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
@@ -28,6 +29,7 @@
       <module name="CRM-Service" options="-parameters" />
       <module name="Gestao-de-Envio" options="-parameters" />
       <module name="GestaoDeEnvio" options="-parameters" />
+      <module name="GestaoPedidos" options="-parameters" />
       <module name="GestaoProdutos" options="-parameters" />
     </option>
   </component>

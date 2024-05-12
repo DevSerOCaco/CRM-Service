@@ -1,51 +1,58 @@
 package com.postech.orderservice.controllers;
 
 import com.postech.orderservice.entities.Pedido;
-import com.postech.orderservice.entities.PedidoRequest;
-import com.postech.orderservice.entities.PedidoResponse;
 import com.postech.orderservice.service.PedidoService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/pedidos")
+@Tag(name = "Gestão de Pedidos", description = "Controller para manutenção na Gestão de Pedidos")
 public class PedidoController {
 
-    private final PedidoService pedidoService;
-
     @Autowired
-    public PedidoController(PedidoService pedidoService) {
-        this.pedidoService = pedidoService;
-    }
+    private PedidoService pedidoService;
 
-    @GetMapping
-    public List<Pedido> listarPedidos() {
-        return pedidoService.listarPedidos();
+    @GetMapping(value = "/listarPedidos", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "Lista todos os Pedidos", method = "GET")
+    public ResponseEntity<List<Pedido>> listarPedidos() {
+        return new ResponseEntity<>(pedidoService.listarPedidos(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public Pedido buscarPedidoPorId(@PathVariable Long id) {
-        return pedidoService.buscarPedidoPorId(id);
+    @Operation(summary = "Busca um pedido pelo Id", method = "GET")
+    public ResponseEntity<Pedido> buscarPedidoPorId(@PathVariable Long id) {
+        Pedido pedido = pedidoService.buscarPedidoPorId(id);
+        return ResponseEntity.ok(pedido);
     }
 
     @PostMapping
-    public ResponseEntity<PedidoResponse> criarPedido(@RequestBody PedidoRequest pedidoRequest,
-                                                      @RequestParam Long clienteId) {
-        PedidoResponse pedidoResponse = pedidoService.criarPedido(clienteId, pedidoRequest);
+    @Operation(summary = "Criar um novo pedido", method = "POST")
+    public ResponseEntity<Pedido> criarPedido(@RequestBody Pedido pedido, @RequestParam Long idCliente) {
+        Pedido pedidoResponse = pedidoService.criarPedido(pedido, idCliente);
         return new ResponseEntity<>(pedidoResponse, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
-    public Pedido atualizarPedido(@PathVariable Long id, @RequestBody Pedido pedido) {
-        return pedidoService.atualizarPedido(id, pedido);
+    @Operation(summary = "Atualizar um pedido cadastrado", method = "PUT")
+    public ResponseEntity<Pedido> atualizarPedido(@PathVariable Long id, @RequestBody Pedido pedidoNovo) {
+        Pedido pedidoNovoResponse = pedidoService.atualizarPedido(id, pedidoNovo);
+        return new ResponseEntity<>(pedidoNovoResponse, HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
+    @Operation(summary = "Deleta um pedido cadastrado", method = "DELETE")
     public void deletarPedido(@PathVariable Long id) {
         pedidoService.deletarPedido(id);
     }
+
 }

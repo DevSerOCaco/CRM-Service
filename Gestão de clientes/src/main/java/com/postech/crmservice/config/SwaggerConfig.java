@@ -1,4 +1,4 @@
-package br.com.fiap.gestaoprodutos.config;
+package com.postech.crmservice.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;
@@ -14,11 +14,11 @@ public class SwaggerConfig {
     @Bean
     public OpenAPI myOpenAPI() {
         Server devServer = new Server();
-        devServer.setUrl("https://app-gestaoprodutos.azurewebsites.net");
+        devServer.setUrl("https://app-gestaoclientes.azurewebsites.net");
         devServer.setDescription("Server Production");
 
         Server prodServer = new Server();
-        prodServer.setUrl("https://localhost:8080");
+        prodServer.setUrl("https://localhost:8090");
         prodServer.setDescription("Server Development");
 
         Contact contact = new Contact();
@@ -29,7 +29,7 @@ public class SwaggerConfig {
                 .title("Tech Challenge Fase IV")
                 .version("1.0")
                 .contact(contact)
-                .description("Documentação dos endpoints da fase IV - Microserviços de Produto");
+                .description("Documentação dos endpoints da fase IV - Microserviços");
 
 
         return new OpenAPI().info(info).servers(List.of(devServer, prodServer));
