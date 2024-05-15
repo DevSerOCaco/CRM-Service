@@ -19,8 +19,7 @@ import java.util.List;
 @Tag(name = "Gestão de Pedidos", description = "Controller para manutenção na Gestão de Pedidos")
 public class PedidoController {
 
-    @Autowired
-    private PedidoService pedidoService;
+    private final PedidoService pedidoService;
 
     @GetMapping(value = "/listarPedidos", produces = MediaType.APPLICATION_JSON_VALUE)
     @Operation(summary = "Lista todos os Pedidos", method = "GET")
@@ -51,8 +50,9 @@ public class PedidoController {
 
     @DeleteMapping("/{id}")
     @Operation(summary = "Deleta um pedido cadastrado", method = "DELETE")
-    public void deletarPedido(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
         pedidoService.deletarPedido(id);
+        return ResponseEntity.noContent().build();
     }
 
 }

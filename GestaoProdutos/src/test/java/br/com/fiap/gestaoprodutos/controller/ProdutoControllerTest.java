@@ -12,14 +12,9 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-
-import java.util.Collections;
 
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.times;
@@ -64,8 +59,8 @@ public class ProdutoControllerTest {
             when(produtoService.salvarProduto(any(Produto.class))).thenAnswer(p -> p.getArgument(0));
 
             mockMvc.perform(post("/produtos/cadastroProduto")
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .content(asJsonString(produto)))
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content(asJsonString(produto)))
                     .andExpect(status().isCreated());
 
             verify(produtoService, times(1)).salvarProduto(any(Produto.class));
@@ -82,7 +77,7 @@ public class ProdutoControllerTest {
             when(produtoService.getProdutoPorId(any(Long.class))).thenReturn(produto);
 
             mockMvc.perform(get("/produtos/getProduto/{id}", id)
-                    .contentType(MediaType.APPLICATION_JSON))
+                            .contentType(MediaType.APPLICATION_JSON))
                     .andExpect(status().isOk())
                     .andExpect(jsonPath("$.id").value(produto.getId().toString()));
 
@@ -101,8 +96,8 @@ public class ProdutoControllerTest {
                     .thenAnswer(p -> p.getArgument(1));
 
             mockMvc.perform(put("/produtos/atualizaProduto/{id}", id)
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .content(asJsonString(produto)))
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content(asJsonString(produto)))
                     .andExpect(status().isOk())
                     .andExpect(jsonPath("$.id").value(produto.getId().toString()));
 
