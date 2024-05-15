@@ -75,12 +75,10 @@ public class PedidoServiceImpl implements PedidoService {
     }
 
     @Override
-    public void deletarPedido(Long id) {
-        if (pedidoRepository.existsById(id)) {
-            pedidoRepository.deleteById(id);
-        } else {
-            throw new IllegalArgumentException("Pedido não encontrado com ID: " + id);
-        }
+    public boolean deletarPedido(Long id) {
+        var pedido = buscarPedidoPorId(id);
+        pedidoRepository.delete(pedido);
+        return true;
     }
 
     private Cliente getClienteById(Long idCliente) {
@@ -103,6 +101,7 @@ public class PedidoServiceImpl implements PedidoService {
             );
 
             ProdutoDto produto = new ProdutoDto();
+            if (response == null) break;
 
             if (response.getStatusCode() == HttpStatus.NOT_FOUND) {
                 throw new NoSuchElementException("Produto não encontrado");
