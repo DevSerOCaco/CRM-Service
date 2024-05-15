@@ -7,6 +7,7 @@ import com.postech.orderservice.entities.*;
 import com.postech.orderservice.repositories.ClienteRepository;
 import com.postech.orderservice.repositories.PedidoRepository;
 import com.postech.orderservice.service.PedidoService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -14,9 +15,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 @Service
 public class PedidoServiceImpl implements PedidoService {
@@ -142,7 +141,7 @@ public class PedidoServiceImpl implements PedidoService {
 
     private void removeEstoque(Long id, Integer quantidade) {
         try {
-            String url = "http://localhost:8080/removeEstoque/"+id+"/"+quantidade;
+            String url = "http://localhost:8080/produtos/removeEstoque/"+id+"/"+quantidade;
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
 
@@ -150,15 +149,16 @@ public class PedidoServiceImpl implements PedidoService {
 
             restTemplate.exchange(url, HttpMethod.PUT, requestEntity, Void.class);
 
+            Map<String, String> params = new HashMap<>();
+            params.put("id", id.toString());
+            params.put("quantidade", quantidade.toString());
 
-//            restTemplate.put(
-//                    "http://localhost:8080/removeEstoque/{id}/{quantidade}",
-//                    String.class,
-//                    id,
-//                    quantidade
-//            );
+            restTemplate.put(
+                    "http://localhost:8080/produtos/removeEstoque/{id}/{quantidade}",
+                    String.class,
+                    params);
         } catch (Exception e) {
-            throw new RuntimeException("não foi possível remover do estoque");
+            throw new RuntimeException("não foi possível remover do estoque. Erro: " + e.getMessage());
         }
     }
 
