@@ -17,7 +17,6 @@ import lombok.NoArgsConstructor;
 public class ItemPedido {
 
     @Id
-    private Long id;
     private Long idProduto;
     private Integer quantidade;
 
