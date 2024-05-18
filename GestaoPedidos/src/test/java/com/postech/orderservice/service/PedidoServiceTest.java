@@ -5,6 +5,7 @@ import com.postech.orderservice.entities.Pedido;
 import com.postech.orderservice.repositories.ClienteRepository;
 import com.postech.orderservice.repositories.PedidoRepository;
 import com.postech.orderservice.service.impl.PedidoServiceImpl;
+import com.postech.orderservice.service.rest.EnvioServiceClient;
 import com.postech.orderservice.utils.PedidoHelper;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -29,6 +30,8 @@ public class PedidoServiceTest {
     @Mock
     private PedidoRepository pedidoRepository;
     @Mock
+    private EnvioServiceClient envioServiceClient;
+    @Mock
     private RestTemplate restTemplate;
     @Mock
     private ObjectMapper objectMapper;
@@ -39,7 +42,7 @@ public class PedidoServiceTest {
     @BeforeEach
     public void setUp() {
         openMocks = MockitoAnnotations.openMocks(this);
-        pedidoService = new PedidoServiceImpl(pedidoRepository, restTemplate, objectMapper);
+        pedidoService = new PedidoServiceImpl(pedidoRepository, restTemplate, objectMapper, envioServiceClient);
     }
 
     @AfterEach

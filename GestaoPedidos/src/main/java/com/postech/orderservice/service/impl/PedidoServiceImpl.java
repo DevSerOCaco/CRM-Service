@@ -7,8 +7,10 @@ import com.postech.orderservice.entities.Cliente;
 import com.postech.orderservice.entities.Endereco;
 import com.postech.orderservice.entities.ItemPedido;
 import com.postech.orderservice.entities.Pedido;
+import com.postech.orderservice.entities.enums.Status;
 import com.postech.orderservice.repositories.PedidoRepository;
 import com.postech.orderservice.service.PedidoService;
+import com.postech.orderservice.service.rest.EnvioServiceClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -22,13 +24,15 @@ import java.util.*;
 public class PedidoServiceImpl implements PedidoService {
 
     private final PedidoRepository pedidoRepository;
+    private final EnvioServiceClient envioServiceClient;
     private final RestTemplate restTemplate;
     private final ObjectMapper objectMapper;
 
     @Autowired
     public PedidoServiceImpl(PedidoRepository pedidoRepository, RestTemplate restTemplate,
-                             ObjectMapper objectMapper) {
+                             ObjectMapper objectMapper, EnvioServiceClient envioServiceClient) {
         this.pedidoRepository = pedidoRepository;
+        this.envioServiceClient = envioServiceClient;
         this.restTemplate = restTemplate;
         this.objectMapper = objectMapper;
     }
@@ -57,8 +61,12 @@ public class PedidoServiceImpl implements PedidoService {
         //total do pedido
         BigDecimal totalPedido = calcularTotalPedido(pedido.getItens(), produtos);
         pedido.setTotalPedido(totalPedido);
+        pedido.setStatus(Status.PEDIDO_NOVO);
 
-        return pedidoRepository.save(pedido);
+        Pedido pedidoSalvo = pedidoRepository.save(pedido);
+        envioServiceClient.enviarPedido(pedidoSalvo);
+
+        return pedidoSalvo;
     }
 
     @Override

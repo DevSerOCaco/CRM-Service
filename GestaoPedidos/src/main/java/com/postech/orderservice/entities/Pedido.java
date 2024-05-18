@@ -1,5 +1,6 @@
 package com.postech.orderservice.entities;
 
+import com.postech.orderservice.entities.enums.Status;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,5 +27,8 @@ public class Pedido {
     @OneToMany
     private List<ItemPedido> itens;
     private BigDecimal totalPedido;
+
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
 }
