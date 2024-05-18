@@ -3,11 +3,12 @@ package com.postech.orderservice.service.impl;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.postech.orderservice.dto.ProdutoDto;
-import com.postech.orderservice.entities.*;
-import com.postech.orderservice.repositories.ClienteRepository;
+import com.postech.orderservice.entities.Cliente;
+import com.postech.orderservice.entities.Endereco;
+import com.postech.orderservice.entities.ItemPedido;
+import com.postech.orderservice.entities.Pedido;
 import com.postech.orderservice.repositories.PedidoRepository;
 import com.postech.orderservice.service.PedidoService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -21,15 +22,13 @@ import java.util.*;
 public class PedidoServiceImpl implements PedidoService {
 
     private final PedidoRepository pedidoRepository;
-    private final ClienteRepository clienteRepository;
     private final RestTemplate restTemplate;
     private final ObjectMapper objectMapper;
 
     @Autowired
-    public PedidoServiceImpl(PedidoRepository pedidoRepository, ClienteRepository clienteRepository, RestTemplate restTemplate,
+    public PedidoServiceImpl(PedidoRepository pedidoRepository, RestTemplate restTemplate,
                              ObjectMapper objectMapper) {
         this.pedidoRepository = pedidoRepository;
-        this.clienteRepository = clienteRepository;
         this.restTemplate = restTemplate;
         this.objectMapper = objectMapper;
     }
@@ -41,13 +40,12 @@ public class PedidoServiceImpl implements PedidoService {
 
     @Override
     public Pedido buscarPedidoPorId(Long id) {
-        return pedidoRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Pedido não encontrado"));
+        return pedidoRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Pedido não encontrado com o ID: " + id));
     }
 
     @Override
     public Pedido criarPedido(Pedido pedido, Long idCliente) {
-//        Cliente cliente = getClienteById(idCliente);
-        Cliente cliente = new Cliente(1l,"nome","111111111","a@a.com","rua x");
+        Cliente cliente = getClienteById(idCliente);
         pedido.setCliente(cliente);
 
         //recupera produtos
@@ -82,8 +80,37 @@ public class PedidoServiceImpl implements PedidoService {
     }
 
     private Cliente getClienteById(Long idCliente) {
-        return clienteRepository.findById(idCliente)
-                .orElseThrow(() -> new IllegalArgumentException("Cliente não encontrado com ID: " + idCliente));
+        ResponseEntity<String> response = restTemplate.getForEntity(
+                "http://localhost:8090/clientes/{id}",
+                String.class,
+                idCliente
+        );
+
+        if (response == null || response.getStatusCode() == HttpStatus.NOT_FOUND) {
+            throw new IllegalArgumentException("Cliente não encontrado com ID: " + idCliente);
+        }
+        try {
+            JsonNode clienteJson = objectMapper.readTree(response.getBody());
+            Endereco endereco = new Endereco(
+                    clienteJson.get("endereco").get("logradouro").asText(),
+                    clienteJson.get("endereco").get("bairro").asText(),
+                    clienteJson.get("endereco").get("cep").asText(),
+                    clienteJson.get("endereco").get("cidade").asText(),
+                    clienteJson.get("endereco").get("uf").asText(),
+                    clienteJson.get("endereco").get("complemento").asText(),
+                    clienteJson.get("endereco").get("numero").asText()
+            );
+            return Cliente.builder()
+                    .idCliente(clienteJson.get("idCliente").asLong())
+                    .nome(clienteJson.get("nome").asText())
+                    .telefone(clienteJson.get("telefone").asText())
+                    .cpf(clienteJson.get("cpf").asText())
+                    .email(clienteJson.get("email").asText())
+                    .endereco(endereco)
+                    .build();
+        } catch (IOException e) {
+            throw new RuntimeException("Não foi possível processar o cliente", e);
+        }
     }
 
     private List<ProdutoDto> recuperaProdutos(List<ItemPedido> itensPedido) {

@@ -1,5 +1,6 @@
 package com.postech.orderservice.entities;
 
+import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-//depois verifcar se voltar a utilizar
+@Embeddable
 public class Endereco {
 
     private String logradouro;

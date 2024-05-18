@@ -17,9 +17,12 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCliente;
+
     private String nome;
     private String telefone;
+    private String cpf;
     private String email;
-    private String endereco;
 
+    @Embedded
+    private Endereco endereco;
 }

@@ -31,4 +31,30 @@ public class GlobalExceptionHandler {
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(errorResponse);
     }
+
+    @ExceptionHandler(NotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleNotFoundException(
+            NotFoundException ex) {
+        List<String> details = new ArrayList<>();
+        details.add(ex.getMessage());
+        var errorResponse =
+                new ErrorResponse("Not Found error", details);
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(errorResponse);
+    }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<ErrorResponse> handleNotFoundException(
+            IllegalArgumentException ex) {
+        List<String> errors = new ArrayList<>();
+        errors.add(ex.getMessage());
+        var errorResponse =
+                new ErrorResponse("Validation Error", errors);
+        return ResponseEntity
+                .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(errorResponse);
+    }
 }

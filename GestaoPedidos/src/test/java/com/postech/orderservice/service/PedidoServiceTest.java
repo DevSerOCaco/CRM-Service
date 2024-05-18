@@ -29,8 +29,6 @@ public class PedidoServiceTest {
     @Mock
     private PedidoRepository pedidoRepository;
     @Mock
-    private ClienteRepository clienteRepository;
-    @Mock
     private RestTemplate restTemplate;
     @Mock
     private ObjectMapper objectMapper;
@@ -41,7 +39,7 @@ public class PedidoServiceTest {
     @BeforeEach
     public void setUp() {
         openMocks = MockitoAnnotations.openMocks(this);
-        pedidoService = new PedidoServiceImpl(pedidoRepository, clienteRepository, restTemplate, objectMapper);
+        pedidoService = new PedidoServiceImpl(pedidoRepository, restTemplate, objectMapper);
     }
 
     @AfterEach

@@ -22,7 +22,9 @@ public abstract class PedidoHelper {
         cliente.setIdCliente(1L);
         cliente.setNome("Cliente Teste");
         cliente.setEmail("email@email.com");
+        cliente.setCpf("12312312312");
         cliente.setTelefone("123456789");
+        cliente.setEndereco(endereco);
 
         ItemPedido item = new ItemPedido();
         item.setIdProduto(1L);
