@@ -1,4 +1,4 @@
 
-“	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(û…èÍ8‚¢ºô1J$80a6df30-498e-411d-982f-f505d05aadeb
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Âèåéÿÿÿÿÿ8æ‘„çø1
 x
-java:S1128"5Remove this unused import 'lombok.NoArgsConstructor'.(¸¨›8¢‚¢ºô1J$cf1025c6-81b3-41a9-aae2-716a2e39a0a8
+java:S1128"5Remove this unused import 'lombok.NoArgsConstructor'.(¸¨›8¢‚¢ºô1J$d4551921-6b5c-4d81-aab5-5f2ce5287b55

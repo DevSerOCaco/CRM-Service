@@ -8,7 +8,6 @@ import lombok.Data;
 import java.util.ArrayList;
 import java.util.List;
 @Data
-@AllArgsConstructor
 public class InserirFretesRequest {
     private int service;
     private Integer agency;
@@ -19,14 +18,17 @@ public class InserirFretesRequest {
     private Options options;
 
     public InserirFretesRequest() {
+    }
+
+    public InserirFretesRequest(From from,
+                                ToInserirFrete to, List<ProductsInserirFretes> products,
+                                List<Volume> volumes, Options options) {
         this.service = 2;
         this.agency = null;
-        this.from = new FromInserirFrete();
-        this.to = new ToInserirFrete("95020035");
-        this.products = new ArrayList<>();
-        this.products.add(new ProductsInserirFretes());
-        this.volumes = new ArrayList<>();
-        this.volumes.add(new Volume());
-        this.options = new Options();
+        this.from = from;
+        this.to = to;
+        this.products = products;
+        this.volumes = volumes;
+        this.options = options;
     }
 }

@@ -1,11 +1,17 @@
 package com.postech.gestaodeenvio.entities;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Itens {
 
-    private Long id;
-
+    private Long Id;
     private String nome;
-
-    private int quantidade;
+    private String quantidade;
+    private String precoUnitario;
 
 }

@@ -12,12 +12,11 @@ public class ToInserirFrete extends com.postech.gestaodeenvio.entities.bodys.To 
     private String city;
     private String document;//cpf
 
-
-    public ToInserirFrete(String postal_code) {
+    public ToInserirFrete(String postal_code, String name, String address, String city, String document) {
         super(postal_code);
-        this.name = "Teste";
-        this.address = "Teste";
-        this.city = "Caxias do Sul";
-        this.document = "02076732098";
+        this.name = name;
+        this.address = address;
+        this.city = city;
+        this.document = document;
     }
 }

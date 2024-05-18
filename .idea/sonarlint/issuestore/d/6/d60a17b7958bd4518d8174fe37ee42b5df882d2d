@@ -1,7 +1,2 @@
 
-n
-java:S1068"&Remove this unused "id" private field.(şÓî«şÿÿÿÿ8È¥úô1J$c16a5394-0269-4087-be18-bd7a9c2c38a4
-k
-java:S1068"(Remove this unused "nome" private field.(«Ÿ¡ù8È¥úô1J$2656047c-97e0-4755-97d8-78ce37ef3bda
-v
-java:S1068	".Remove this unused "quantidade" private field.(Şè²İûÿÿÿÿ8È¥úô1J$5ed723bb-8253-4b97-b8ba-e4b63b0df03f
+i	java:S116"MRename this field "Id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›ÖÒß8 £¥çø1

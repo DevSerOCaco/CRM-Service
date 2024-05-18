@@ -6,13 +6,9 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class ProductsInserirFretes {
+    private Long id;
     private String name;
     private String quantity;
     private String unitary_value;
 
-    public ProductsInserirFretes() {
-        this.name = "teste product";
-        this.quantity = "1";
-        this.unitary_value = "150";
-    }
 }

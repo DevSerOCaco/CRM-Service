@@ -31,8 +31,6 @@ OGest√£o de clientes/src/main/java/com/postech/crmservice/entities/Endereco.java
 UGest√£o de clientes/src/main/java/com/postech/crmservice/services/ClienteService.java,1\b\1b13f029737f44814cca7feae200985a90824e48
 ã
 [Gest√£o de clientes/src/main/java/com/postech/crmservice/controllers/ClienteController.java,d\2\d2158d39c78cc08bc26450d66ea26eb1189b963a
-ã
-[GestaoProdutos/src/test/java/br/com/fiap/gestaoprodutos/GestaoProdutosApplicationTests.java,6\7\67ce710155a025ff810ed4ccc30df84289f8019f
 Ü
 VGestaoProdutos/src/main/java/br/com/fiap/gestaoprodutos/GestaoProdutosApplication.java,7\f\7f3d064fec52c732b5bdb398ef6e1f8a9ea62959
 F
@@ -61,8 +59,6 @@ NGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/Endereco.java
 RGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/Destinatario.java,7\b\7bf9d7f396b2b885a3f6608f87143a41672beea0
 {
 KGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/Envio.java,e\4\e4343a176660bf735302a9a2da42ebdc8ee6cd3c
-ë
-aGestao de Envio/src/main/java/com/postech/gestaodeenvio/service/integracao/MelhorEnvioClient.java,b\4\b475d7d764aeb54620fa34977f93786a6da67b5b
 Ä
 PGestao de Envio/src/main/java/com/postech/gestaodeenvio/entities/bodys/From.java,8\c\8c5a0314eee4b2e7c4db95d1ccb0927e07e6c153
 ~
@@ -96,13 +92,7 @@ IGestaoPedidos/src/main/java/com/postech/orderservice/entities/Pedido.java,c\c\
 à
 XGestaoPedidos/src/main/java/com/postech/orderservice/service/impl/PedidoServiceImpl.java,5\2\5272fe72f6ccdd405acf49b1c25541139aed4536
 z
-JGestaoPedidos/src/main/java/com/postech/orderservice/entities/Produto.java,b\4\b44174cf76b655f983436b7a5effb422b8a747e1
-z
 JGestaoProdutos/Gestao de Produtos - tech challenge.postman_collection.json,5\7\5728131b20ff18d78e60a4035cf2934ba993fb4b
-ç
-]Gestao de Envio/src/main/java/com/postech/gestaodeenvio/service/integracao/EnvioConsumer.java,f\3\f37645d65cc53870f2cbd94eb80f85d4aaa951c9
-Å
-QGestao de Envio/src/main/java/com/postech/gestaodeenvio/service/EnvioService.java,e\c\ec2bec545d8022fad91167ad0d9c20bacd215088
 é
 ^Gestao de Envio/src/main/java/com/postech/gestaodeenvio/services/integracao/EnvioConsumer.java,a\d\adc49b2112a336fbebc3654d9bdbfa7b4a5eae9e
 Ç
@@ -111,3 +101,19 @@ RGestao de Envio/src/main/java/com/postech/gestaodeenvio/services/EnvioService.j
 ]Gestao de Envio/src/main/java/com/postech/gestaodeenvio/services/integracao/EnvioRequest.java,6\e\6e08f5e7a81a29df6355858d69f5033aa814efc4
 í
 bGestao de Envio/src/main/java/com/postech/gestaodeenvio/services/integracao/MelhorEnvioClient.java,d\a\dab1c51b0c5d0fde6c6091b5db9b9b9f9666f956
+}
+MGestao de Envio/src/main/java/com/postech/gestaodeenvio/config/AppConfig.java,1\8\1822d03ddde9337664c3bd3586e75cc712a4f93d
+à
+XGestao de Envio/src/main/java/com/postech/gestaodeenvio/controllers/EnvioController.java,2\b\2b3036ded87b473bf427c317d9eeec6fd3efa794
+ã
+[Gestao de Envio/src/main/java/com/postech/gestaodeenvio/services/impl/EnvioServiceImpl.java,d\1\d1680f0e8ae48393e7db54c2f88f38c2872b7159
+z
+JGestaoPedidos/src/main/java/com/postech/orderservice/entities/Cliente.java,9\4\94541ef7b005e4751883c8172790238f270c384d
+}
+MGestaoPedidos/src/main/java/com/postech/orderservice/entities/ItemPedido.java,0\0\00a30dbce9709724650baa0a987f4501a8d9a0af
+É
+SGestao de Envio/src/main/java/com/postech/gestaodeenvio/services/PedidoService.java,5\a\5ab2115ce4082998ce312c737401a73687097039
+å
+\Gestao de Envio/src/main/java/com/postech/gestaodeenvio/services/impl/PedidoServiceImpl.java,1\c\1c7c4efcc55c555e4e2bafefca3af4801ab60697
+â
+YGestao de Envio/src/main/java/com/postech/gestaodeenvio/controllers/PedidoController.java,7\4\74f72b241bf61bda44afe3d583b581607d3ef04f
