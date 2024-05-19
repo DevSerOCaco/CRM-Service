@@ -21,10 +21,10 @@ public class MelhorEnvioController {
         return melhorEnvioClient.calcularFrete(cep);
     }
 
-    @GetMapping("/inserir")
-    public ResponseEntity<?> inserirFrete() throws IOException, InterruptedException {
-        return melhorEnvioClient.inserirFrete();
-    }
+   // @GetMapping("/inserir")
+    //public ResponseEntity<?> inserirFrete() throws IOException, InterruptedException {
+     //   return melhorEnvioClient.inserirFrete();
+    //}
 
     @GetMapping("/gerarEtiqueta")
     public ResponseEntity<?> gerarEtiqueta() throws IOException, InterruptedException {

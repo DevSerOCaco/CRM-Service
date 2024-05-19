@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+
 @RestController
 @RequestMapping("/pedidos")
 public class PedidoController {
@@ -19,7 +21,7 @@ public class PedidoController {
     }
 
     @PostMapping("/importar")
-    public ResponseEntity<Pedido> importarPedido(@RequestBody Pedido pedido) {
-        return ResponseEntity.ok(pedidoService.importarPedido(pedido));
+    public ResponseEntity<?> importarPedido(@RequestBody Pedido pedido) throws IOException, InterruptedException {
+        return ResponseEntity.ok(pedidoService.importarPedido(pedido).getBody());
     }
 }
