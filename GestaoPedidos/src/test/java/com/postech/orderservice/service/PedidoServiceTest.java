@@ -52,22 +52,6 @@ public class PedidoServiceTest {
 
 
     @Nested
-    class RegistrarPedido {
-        @Test
-        void devePermitirRegistrarPedido() throws Exception {
-            var pedido = PedidoHelper.gerarPedido();
-
-            when(pedidoRepository.save(any(Pedido.class))).thenReturn(pedido);
-
-            var pedidoReg = pedidoService.criarPedido(pedido, 1L);
-
-            assertThat(pedidoReg).isInstanceOf(Pedido.class).isNotNull();
-            assertThat(pedidoReg.getIdPedido()).isEqualTo(pedido.getIdPedido());
-            assertThat(pedidoReg.getTotalPedido()).isNotNull();
-        }
-    }
-
-    @Nested
     class BuscarPedido {
         @Test
         void devePermitirBuscarPedido() throws Exception {

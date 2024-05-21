@@ -14,6 +14,13 @@ Gestão de envios - https://app-gestaoenvios.azurewebsites.net
 Gestão de pedidos - https://app-gestaopedidos.azurewebsites.net
 
 
+### Deploy - OnRender.com
+https://app-gestaoclientes.onrender.com
+https://app-gestaoprodutos.onrender.com
+https://app-gestaopedidos.onrender.com
+https://app-gestaoenvio.onrender.com
+
+
 
 ## 🔧 Instalação
 
@@ -28,6 +35,12 @@ git clone https://github.com/DevSerOCaco/Tech-Challenge-Fase4
   compila o projeto, gera o resultado no diretório _target_
 
 ## 🛠️ Swagger Documentação
+- Gestão de clientes - https://app-gestaoclientes.onrender.com/documentacao
+- Gestão de produtos - https://app-gestaoprodutos.onrender.com/documentacao
+- Gestão de pedidos - https://app-gestaopedidos.onrender.com/documentacao
+- Gestão de envio - https://app-gestaoenvio.onrender.com/documentacao
+<br>
+<br>
 - Gestão de clientes - https://app-gestapclientes.azurewebsites.net/documentacao
 - Gestão de produtos - https://app-gestaoprodutos.azurewebsites.net/documentacao
 - Gestão de envios - https://app-gestaoenvios.azurewebsites.net/documentacao
